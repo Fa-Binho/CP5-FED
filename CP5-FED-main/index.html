@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 5 - Front-end Design</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="menu-fixo">
+        <div class="logo">CP 5</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="#pokemons">Pokemons</a></li>
+                <li><a href="#cartas">Cartas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="sessao-inicio">
+            <div class="conteudo-inicio">
+                <h1 class="titulo-principal">Checkpoint<br>Project</h1>
+                <a href="#integrantes" class="btn-start">Start</a>
+            </div>
+        </section>
+
+        <section id="integrantes" class="sessao-integrantes">
+            <h2 class="titulo-sessao titulo-borda">Choose your character</h2>
+            <div class="caixa-integrantes">
+                <ul>
+  <li>
+    <span class="arrow">></span>
+    <span class="nome">Fábio Alexandre Barbosa Filho</span>
+    <span class="rm">RM 567419</span>
+  </li>
+  <li>
+    <span class="arrow">></span>
+    <span class="nome">Igor Davi Avelar Rosa Cesário</span>
+    <span class="rm">RM 568163</span>
+  </li>
+</ul>
+            </div>
+        </section>
+
+        <section id="pokemons" class="sessao-pokemons">
+            <div class="pokemon-layout">
+                <aside class="filtro-lateral">
+                    <h3 class="subtitulo">Descubra os pokemons</h3>
+                    <ul id="lista-filtros">
+                        <li class="ativo" data-filter="todos">> Todos</li>
+                        <li data-filter="agua">Água</li>
+                        <li data-filter="fogo">Fogo</li>
+                        <li data-filter="planta">Planta</li>
+                        <li data-filter="eletrico">Elétrico</li>
+                        <li data-filter="gelo">Gelo</li>
+                    </ul>
+                </aside>
+                
+                <div class="grid-pokemons" id="grid-pokemons">
+                    <div class="poke-card" data-tipo="fogo" onclick="abrirModal('Charmander', '0.6 m', '8.5 kg', 'Lizard', 'Blaze', 'Água', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png')">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt="Charmander">
+                    </div>
+                    <div class="poke-card" data-tipo="planta" onclick="abrirModal('Bulbasaur', '0.7 m', '6.9 kg', 'Seed', 'Overgrow', 'Fogo', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png')">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="Bulbasaur">
+                    </div>
+                    <div class="poke-card" data-tipo="agua" onclick="abrirModal('Squirtle', '0.5 m', '9.0 kg', 'Tiny Turtle', 'Torrent', 'Planta', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png')">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt="Squirtle">
+                    </div>
+                    <div class="poke-card" data-tipo="eletrico" onclick="abrirModal('Pikachu', '0.4 m', '6.0 kg', 'Mouse', 'Static', 'Terra', 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png')">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="Pikachu">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cartas" class="sessao-cartas">
+            <h2 class="subtitulo">Crie sua própria carta especial</h2>
+            
+            <div class="layout-cartas">
+                <form id="form-carta">
+                    <div class="form-group">
+                        <label for="nomeCarta">Nome da carta:</label>
+                        <input type="text" id="nomeCarta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vidaCarta">Quantidade de vida:</label>
+                        <input type="number" id="vidaCarta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pokemonSelect">Pokemon:</label>
+                        <select id="pokemonSelect" required>
+                            <option value="">Selecione o pokemon</option>
+                            <option value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png">Charmander</option>
+                            <option value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">Bulbasaur</option>
+                            <option value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png">Squirtle</option>
+                            <option value="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png">Pikachu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ataqueCarta">Ataque:</label>
+                        <input type="text" id="ataqueCarta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoriaSelect">Categoria (Fundo):</label>
+                        <select id="categoriaSelect" required>
+                            <option value="">Selecione a categoria</option>
+                            <option value="#f8d030">Elétrico (Amarelo)</option>
+                            <option value="#78c850">Planta (Verde)</option>
+                            <option value="#f08030">Fogo (Laranja)</option>
+                            <option value="#6890f0">Água (Azul)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resistenciaCarta">Resistência:</label>
+                        <input type="text" id="resistenciaCarta" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </form>
+
+                <div class="carta-preview" id="cartaResultado">
+                    <div class="carta-header">
+                        <span id="resNome">Nome</span>
+                        <span id="resVida">HP 0</span>
+                    </div>
+                    <div class="carta-imagem">
+                        <img id="resImg" src="" alt="">
+                    </div>
+                    <div class="carta-status">
+                        <p><strong>Ataque:</strong> <span id="resAtaque">-</span></p>
+                        <p><strong>Resistência:</strong> <span id="resResistencia">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-bloco titulo">
+            <h2 class="subtitulo">Explore e divirta-se</h2>
+        </div>
+        <div class="footer-layout">
+            <div class="footer-bloco">
+                <p>1º ano - Engenharia de Software</p>
+                <p>FIAP - Paulista</p>
+                <p>São Paulo - SP</p>
+            </div>
+            <div class="footer-bloco">
+                <p>Telefone: (11) 5456-7890</p>
+                <p>E-mail: checkpoint@fiap.com.br</p>
+                <p>Redes sociais: @checkpoint</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalPokemon" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">X</span>
+            <h2 id="modalNome" class="titulo-sessao">Nome</h2>
+            <div class="modal-info">
+                <div>
+                    <p><strong>Altura:</strong> <span id="modalAltura"></span></p>
+                    <p><strong>Categoria:</strong> <span id="modalCategoria"></span></p>
+                </div>
+                <div>
+                    <p><strong>Peso:</strong> <span id="modalPeso"></span></p>
+                    <p><strong>Habilidades:</strong> <span id="modalHabilidades"></span></p>
+                    <p><strong>Fraqueza:</strong> <span id="modalFraqueza"></span></p>
+                </div>
+            </div>
+            <div class="modal-img-container">
+                <img id="modalImagem" src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
