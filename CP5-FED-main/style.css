@@ -63,6 +63,30 @@ section {
     overflow: hidden;
 }
 
+.sessao-inicio::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background-image: url('images/global/banner-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sessao-inicio::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background-image: url('images/global/banner-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .titulo-principal {
     font-size: 3.1rem;
     line-height: calc(3.1rem + 1.3rem); /* 1.3rem de espaçamento exigido */
