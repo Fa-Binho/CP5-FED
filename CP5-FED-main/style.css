@@ -56,7 +56,7 @@ section {
 
 /* --- 1º SESSÃO: INÍCIO --- */
 .sessao-inicio {
-    background: linear-gradient(to bottom, #27a3ff, #e4ffff);
+    background: url('images/global/banner-full.png') center/cover no-repeat, linear-gradient(to bottom, #27a3ff, #e4ffff);
     align-items: center;
     text-align: center;
     position: relative;
@@ -303,6 +303,9 @@ input, select {
     border-radius: 15px;
     padding: 1.5rem;
     background-color: #fff;
+    background-image: url('images/global/card.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -318,6 +321,9 @@ footer {
     background-color: #6D86DD;
     color: white;
     padding: 5rem 5%;
+    background-image: url('images/global/footer-banner.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .footer-layout {
