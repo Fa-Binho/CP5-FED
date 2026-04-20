@@ -1,0 +1,602 @@
+/* =========================================
+   RESETS E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    background-color: #FBF6F3;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+/* Tipografia exigida */
+h1, h2, h3, .logo, .menu-fixo a {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.subtitulo {
+    font-size: 2.6rem;
+    letter-spacing: -2px;
+}
+
+/* =========================================
+   MENU FIXO
+   ========================================= */
+.menu-fixo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FBF6F3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.menu-fixo .logo { font-size: 2rem; }
+.menu-fixo ul { list-style: none; display: flex; gap: 3rem; }
+.menu-fixo a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+.menu-fixo a:hover { color: #6D86DD; }
+
+/* =========================================
+   SEÇÕES (geral)
+   ========================================= */
+section {
+    min-height: 100vh;
+    padding: 10rem 5% 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =========================================
+   1ª SESSÃO: INÍCIO
+   ========================================= */
+.sessao-inicio {
+    background: linear-gradient(to bottom, #27a3ff, #e4ffff);
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Imagem de fundo à esquerda (pseudo-elemento before) */
+.sessao-inicio::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48%;
+    height: 65%;
+    background-image: url('images/global/banner-left.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: 0;
+}
+
+/* Imagem de fundo à direita (pseudo-elemento after) */
+.sessao-inicio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 48%;
+    height: 65%;
+    background-image: url('images/global/banner-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    z-index: 0;
+}
+
+.conteudo-inicio {
+    position: relative;
+    z-index: 1;
+}
+
+.titulo-principal {
+    font-size: 3.1rem;
+    line-height: calc(3.1rem + 1.3rem); /* espaçamento de 1.3rem exigido */
+    margin-bottom: 4rem;
+    color: #333;
+}
+
+.btn-start {
+    font-family: 'Noto Serif', serif;
+    background-color: white;
+    color: black;
+    padding: 1.5rem 4rem;
+    font-size: 2rem;
+    border: 2px solid black;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 4px 4px 0px black;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-start:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px black;
+}
+
+/* =========================================
+   2ª SESSÃO: INTEGRANTES
+   ========================================= */
+.sessao-integrantes {
+    background-color: #FBF6F3;
+    align-items: center;
+}
+
+/* Título branco com borda preta, tamanho 3.3rem exigido */
+.titulo-borda {
+    font-size: 3.3rem;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.caixa-integrantes {
+    background: white;
+    border: 4px solid black;
+    padding: 3rem 4rem;
+    width: 100%;
+    max-width: 700px;
+}
+
+.caixa-integrantes ul { list-style: none; }
+
+.caixa-integrantes li {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    padding: 2rem 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.caixa-integrantes li:last-child { border-bottom: none; }
+
+/* Seta aparece no hover */
+.seta-icon {
+    width: 22px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+}
+
+.caixa-integrantes li:hover .seta-icon {
+    opacity: 1;
+}
+
+/* =========================================
+   3ª SESSÃO: POKÉMONS
+   ========================================= */
+.sessao-pokemons {
+    background-color: #6D86DD;
+    color: white;
+}
+
+.pokemon-layout {
+    display: flex;
+    gap: 5rem;
+    margin-top: 3rem;
+    align-items: flex-start;
+}
+
+.filtro-lateral { min-width: 200px; }
+
+.filtro-lateral h3 {
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.filtro-lateral ul {
+    list-style: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+}
+
+.filtro-lateral li {
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.filtro-lateral li:hover,
+.filtro-lateral li.ativo {
+    color: #ffe600;
+}
+
+.grid-pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.poke-card {
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.poke-card:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.poke-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* fundo preto 40% exigido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+    background-color: #FBF6F3;
+    color: #333;
+    padding: 4rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    max-height: 88vh;
+    overflow-y: auto;
+}
+
+.modal-nome {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: -1px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.4rem;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.close-btn:hover { background: #555; }
+
+.modal-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+}
+
+.modal-col { flex: 1; }
+
+.modal-col p {
+    margin-bottom: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tipo-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Evoluções */
+.evolucao-container {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid #ddd;
+}
+
+.evolucao-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.evo-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.evo-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.evo-img:hover { transform: scale(1.15); }
+
+.evo-arrow {
+    font-size: 2.5rem;
+    color: #6D86DD;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* =========================================
+   4ª SESSÃO: CARTAS
+   ========================================= */
+.sessao-cartas { background-color: #FBF6F3; }
+
+.titulo-cartas {
+    line-height: 1.8;
+}
+
+.layout-cartas {
+    display: flex;
+    gap: 5rem;
+    margin-top: 4rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Exigência: bordas 15px e tamanho 1.15rem */
+input, select {
+    border-radius: 15px;
+    font-size: 1.15rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ccc;
+    font-family: 'Noto Serif', serif;
+    background-color: white;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #6D86DD;
+    box-shadow: 0 0 0 3px rgba(109, 134, 221, 0.2);
+}
+
+/* Botão exigido: #7CAAC9, hover #5881AE */
+.btn-enviar {
+    background-color: #7CAAC9;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 1.5rem 3rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+}
+
+.btn-enviar:hover { background-color: #5881AE; }
+
+/* Carta Preview */
+.carta-preview {
+    width: 300px;
+    min-height: 440px;
+    background-image: url('images/global/card.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Overlay de cor da categoria */
+.carta-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    pointer-events: none;
+    transition: background-color 0.4s;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.carta-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    height: 100%;
+}
+
+.carta-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 1rem;
+}
+
+.carta-imagem-area {
+    position: relative;
+    width: 200px;
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moldura-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pokemon-img-carta {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    position: relative;
+    z-index: 0;
+}
+
+.carta-status {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.carta-status p {
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding-bottom: 0.6rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: #6D86DD;
+    color: white;
+}
+
+.footer-banner-img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.footer-conteudo {
+    padding: 5rem 5%;
+}
+
+.footer-titulo {
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.footer-layout {
+    display: flex;
+    gap: 50px; /* 50px exigido entre os blocos */
+}
+
+.footer-bloco p {
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    font-family: 'Noto Serif', serif;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 900px) {
+    .pokemon-layout { flex-direction: column; }
+    .layout-cartas { flex-direction: column; align-items: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .btn-enviar { align-self: stretch; text-align: center; }
+    .menu-fixo ul { gap: 1.5rem; }
+    .carta-preview { width: 100%; max-width: 320px; }
+}
+
+@media (max-width: 600px) {
+    .menu-fixo { flex-direction: column; gap: 1rem; padding: 1rem 3%; }
+    .menu-fixo ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .menu-fixo a { font-size: 1rem; }
+    .titulo-principal { font-size: 2rem; }
+    .titulo-borda { font-size: 2rem; }
+    .subtitulo { font-size: 1.8rem; }
+    .modal-info { flex-direction: column; gap: 1rem; }
+    .modal-content { padding: 3rem 2rem; }
+    .footer-layout { flex-direction: column; gap: 30px; }
+    .caixa-integrantes { padding: 2rem; }
+    .caixa-integrantes li { font-size: 1.1rem; }
+    .grid-pokemons { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+    .sessao-inicio::before,
+    .sessao-inicio::after { height: 40%; }
+}

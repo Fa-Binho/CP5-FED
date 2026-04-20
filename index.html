@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkpoint 5 - Front-end Design</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== MENU ========== -->
+    <header class="menu-fixo">
+        <div class="logo">CP 5</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="#pokemons">Pokemons</a></li>
+                <li><a href="#cartas">Cartas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- 1ª SESSÃO: INÍCIO -->
+        <section id="inicio" class="sessao-inicio">
+            <div class="conteudo-inicio">
+                <h1 class="titulo-principal">Checkpoint<br>Project</h1>
+                <a href="#integrantes" class="btn-start">Start</a>
+            </div>
+        </section>
+
+        <!-- 2ª SESSÃO: INTEGRANTES -->
+        <section id="integrantes" class="sessao-integrantes">
+            <h2 class="titulo-borda">Choose your character</h2>
+            <div class="caixa-integrantes">
+                <ul>
+                    <li>
+                        <img src="images/icons/seta.png" class="seta-icon" alt="seta">
+                        <span>Fábio Alexandre Barbosa Filho - RM 567419</span>
+                    </li>
+                    <li>
+                        <img src="images/icons/seta.png" class="seta-icon" alt="seta">
+                        <span>Igor Davi Avelar Rosa Cesário - RM 568163</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3ª SESSÃO: POKÉMONS -->
+        <section id="pokemons" class="sessao-pokemons">
+            <div class="pokemon-layout">
+                <aside class="filtro-lateral">
+                    <h3 class="subtitulo">Descubra os<br>pokemons</h3>
+                    <ul id="lista-filtros">
+                        <li class="ativo" data-filter="todos">&#9658; Todos</li>
+                        <li data-filter="agua">Água</li>
+                        <li data-filter="fogo">Fogo</li>
+                        <li data-filter="planta">Planta</li>
+                        <li data-filter="eletrico">Elétrico</li>
+                        <li data-filter="gelo">Gelo</li>
+                    </ul>
+                </aside>
+
+                <div class="grid-pokemons" id="grid-pokemons">
+                    <!-- FOGO -->
+                    <div class="poke-card" data-tipo="fogo" data-nome="Charmander" onclick="abrirModal('Charmander')">
+                        <img src="images/pokemons/Charmander.png" alt="Charmander">
+                    </div>
+                    <div class="poke-card" data-tipo="fogo" data-nome="Growlithe" onclick="abrirModal('Growlithe')">
+                        <img src="images/pokemons/Growlithe.png" alt="Growlithe">
+                    </div>
+                    <div class="poke-card" data-tipo="fogo" data-nome="Ponyta" onclick="abrirModal('Ponyta')">
+                        <img src="images/pokemons/Ponyta.png" alt="Ponyta">
+                    </div>
+                    <!-- ÁGUA -->
+                    <div class="poke-card" data-tipo="agua" data-nome="Squirtle" onclick="abrirModal('Squirtle')">
+                        <img src="images/pokemons/Squirtle.png" alt="Squirtle">
+                    </div>
+                    <div class="poke-card" data-tipo="agua" data-nome="Goldeen" onclick="abrirModal('Goldeen')">
+                        <img src="images/pokemons/Goldeen.png" alt="Goldeen">
+                    </div>
+                    <div class="poke-card" data-tipo="agua" data-nome="Krabby" onclick="abrirModal('Krabby')">
+                        <img src="images/pokemons/Krabby.png" alt="Krabby">
+                    </div>
+                    <!-- PLANTA -->
+                    <div class="poke-card" data-tipo="planta" data-nome="Bulbasaur" onclick="abrirModal('Bulbasaur')">
+                        <img src="images/pokemons/Bulbasaur.png" alt="Bulbasaur">
+                    </div>
+                    <div class="poke-card" data-tipo="planta" data-nome="Bellsprout" onclick="abrirModal('Bellsprout')">
+                        <img src="images/pokemons/Bellsprout.png" alt="Bellsprout">
+                    </div>
+                    <div class="poke-card" data-tipo="planta" data-nome="Caterpie" onclick="abrirModal('Caterpie')">
+                        <img src="images/pokemons/Caterpie.png" alt="Caterpie">
+                    </div>
+                    <!-- ELÉTRICO -->
+                    <div class="poke-card" data-tipo="eletrico" data-nome="Pikachu" onclick="abrirModal('Pikachu')">
+                        <img src="images/pokemons/Pikachu.png" alt="Pikachu">
+                    </div>
+                    <div class="poke-card" data-tipo="eletrico" data-nome="Abra" onclick="abrirModal('Abra')">
+                        <img src="images/pokemons/Abra.png" alt="Abra">
+                    </div>
+                    <div class="poke-card" data-tipo="eletrico" data-nome="Eevee" onclick="abrirModal('Eevee')">
+                        <img src="images/pokemons/Eevee.png" alt="Eevee">
+                    </div>
+                    <!-- GELO -->
+                    <div class="poke-card" data-tipo="gelo" data-nome="Lapras" onclick="abrirModal('Lapras')">
+                        <img src="images/pokemons/Lapras.png" alt="Lapras">
+                    </div>
+                    <div class="poke-card" data-tipo="gelo" data-nome="Jigglypuff" onclick="abrirModal('Jigglypuff')">
+                        <img src="images/pokemons/Jigglypuff.png" alt="Jigglypuff">
+                    </div>
+                    <div class="poke-card" data-tipo="gelo" data-nome="Clefairy" onclick="abrirModal('Clefairy')">
+                        <img src="images/pokemons/Clefairy.png" alt="Clefairy">
+                    </div>
+                    <div class="poke-card" data-tipo="gelo" data-nome="Snorlax" onclick="abrirModal('Snorlax')">
+                        <img src="images/pokemons/Snorlax.png" alt="Snorlax">
+                    </div>
+                    <div class="poke-card" data-tipo="gelo" data-nome="Pidgey" onclick="abrirModal('Pidgey')">
+                        <img src="images/pokemons/Pidgey.png" alt="Pidgey">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4ª SESSÃO: CARTAS -->
+        <section id="cartas" class="sessao-cartas">
+            <h2 class="subtitulo titulo-cartas">Crie sua<br>própria carta<br>especial</h2>
+
+            <div class="layout-cartas">
+                <form id="form-carta">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nomeCarta">Nome da carta:</label>
+                            <input type="text" id="nomeCarta" placeholder="Nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="vidaCarta">Quantidade de vida:</label>
+                            <input type="number" id="vidaCarta" placeholder="Ex: 100">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pokemonSelect">Pokemon:</label>
+                            <select id="pokemonSelect">
+                                <option value="">Selecione o pokemon</option>
+                                <option value="Charmander">Charmander</option>
+                                <option value="Growlithe">Growlithe</option>
+                                <option value="Ponyta">Ponyta</option>
+                                <option value="Squirtle">Squirtle</option>
+                                <option value="Goldeen">Goldeen</option>
+                                <option value="Krabby">Krabby</option>
+                                <option value="Bulbasaur">Bulbasaur</option>
+                                <option value="Bellsprout">Bellsprout</option>
+                                <option value="Caterpie">Caterpie</option>
+                                <option value="Pikachu">Pikachu</option>
+                                <option value="Abra">Abra</option>
+                                <option value="Eevee">Eevee</option>
+                                <option value="Lapras">Lapras</option>
+                                <option value="Jigglypuff">Jigglypuff</option>
+                                <option value="Snorlax">Snorlax</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ataqueCarta">Ataque:</label>
+                            <input type="text" id="ataqueCarta" placeholder="Ex: Fire Blast">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="categoriaSelect">Categoria:</label>
+                            <select id="categoriaSelect">
+                                <option value="">Selecione a categoria</option>
+                                <option value="eletrico">Elétrico</option>
+                                <option value="planta">Planta</option>
+                                <option value="fogo">Fogo</option>
+                                <option value="agua">Água</option>
+                                <option value="gelo">Gelo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="resistenciaCarta">Resistência:</label>
+                            <input type="text" id="resistenciaCarta" placeholder="Ex: 50">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </form>
+
+                <!-- Preview da Carta -->
+                <div class="carta-preview" id="cartaResultado">
+                    <div class="carta-overlay" id="cartaOverlay"></div>
+                    <div class="carta-content">
+                        <div class="carta-header">
+                            <span id="resNome">Nome da Carta</span>
+                            <span id="resVida">HP 0</span>
+                        </div>
+                        <div class="carta-imagem-area">
+                            <img id="resImg" src="" alt="" class="pokemon-img-carta">
+                        </div>
+                        <div class="carta-status">
+                            <p><strong>Ataque:</strong> <span id="resAtaque">-</span></p>
+                            <p><strong>Resistência:</strong> <span id="resResistencia">-</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <img src="images/global/footer-banner.jpg" class="footer-banner-img" alt="Banner Pokémon">
+        <div class="footer-conteudo">
+            <h2 class="subtitulo footer-titulo">Explore e divirta-se</h2>
+            <div class="footer-layout">
+                <div class="footer-bloco">
+                    <p>1º ano - Engenharia de Software</p>
+                    <p>FIAP - Paulista</p>
+                    <p>São Paulo - SP</p>
+                </div>
+                <div class="footer-bloco">
+                    <p>Telefone: (12) 3456-7890</p>
+                    <p>E-mail: checkpoint@fiap.com.br</p>
+                    <p>Redes sociais: @checkpoint</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MODAL POKÉMON ========== -->
+    <div id="modalPokemon" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">X</span>
+            <h2 id="modalNome" class="modal-nome">Nome</h2>
+            <div class="modal-info">
+                <div class="modal-col">
+                    <p><strong>Altura:</strong> <span id="modalAltura"></span></p>
+                    <p><strong>Categoria:</strong> <span id="modalCategoria"></span></p>
+                    <p class="modal-tipo-row"><strong>Tipo:</strong> <span id="modalTipo"></span></p>
+                </div>
+                <div class="modal-col">
+                    <p><strong>Peso:</strong> <span id="modalPeso"></span></p>
+                    <p><strong>Habilidades:</strong> <span id="modalHabilidades"></span></p>
+                    <p class="modal-tipo-row"><strong>Fraqueza:</strong> <span id="modalFraqueza"></span></p>
+                </div>
+            </div>
+            <div class="evolucao-container">
+                <div class="evolucao-images" id="evolucaoImages"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
